@@ -1,7 +1,7 @@
 import pgzrun
 import keyboard
 import conf
-#pgzrun 4k_tracker/4k_tracker.py
+#pgzrun Codes/4k_tracker.py
 
 FPS = 30
 WIDTH = 400
@@ -23,6 +23,27 @@ background = "freedom_dive"#Nome do plano de fundo (ex: freedom_dive, space, etc
 skin_0 = note_skin + "0"
 skin_1 = note_skin + "1"
 
+#-x-x-x-x-x-x-x-x-
+print("-x-x-x-x-x-x-x-x-")
+print("\nSkins info:")
+skins = conf.skins()
+
+print("Note skins:")
+for i in range(len(skins[0])):
+    print(f"note {i}: {skins[0][i]}")
+print("\n")
+
+print("Background skins:")
+for i in range(len(skins[1])):
+    print(f"back {i}: {skins[1][i]}")
+
+print("-x-x-x-x-x-x-x-x-")
+#-x-x-x-x-x-x-x-x-
+if skin_0 and skin_1 in skins[0] and background in skins[1]:
+    print("\nAll skins found!")
+else:
+    raise FileNotFoundError("Nome do arquivo não existe, tente novamente")
+
 back = Actor(background, (WIDTH // 2, HEIGHT // 2))
 
 note1 = Actor(skin_0, center=(WIDTH/5, HEIGHT-50))
@@ -33,8 +54,16 @@ note4 = Actor(skin_0, center=(WIDTH/5*4, HEIGHT-50))
 
 vel = conf.vel(note1.height, note1.image)
 
-print(f"vel -> {vel}\nImages -> {skin_1}, {skin_0}\nBackground -> {background}")
+#-x-x-x-x-x-x-x-x-x-x-x-
+print("-x-x-x-x-x-x-x-x-")
+
+print("\ngeral info:")
+print(f"\nvel -> {vel}\nImages -> {skin_1}, {skin_0}\nBackground -> {background}")
 print(f"\nNote height -> {note1.height}\nNote width -> {note1.width}")
+
+print("-x-x-x-x-x-x-x-x-")
+#-x-x-x-x-x-x-x-x-x-x-x-
+
 notes_1 = []
 notes_2 = []
 notes_3 = []
