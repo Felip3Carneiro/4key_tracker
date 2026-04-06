@@ -25,24 +25,9 @@ skin_1 = note_skin + "1"
 
 #-x-x-x-x-x-x-x-x-
 print("-x-x-x-x-x-x-x-x-")
-print("\nSkins info:")
-skins = conf.skins()
-
-print("Note skins:")
-for i in range(len(skins[0])):
-    print(f"note {i}: {skins[0][i]}")
-print("\n")
-
-print("Background skins:")
-for i in range(len(skins[1])):
-    print(f"back {i}: {skins[1][i]}")
-
+conf.skins(skin_0, skin_1, background)
 print("-x-x-x-x-x-x-x-x-")
 #-x-x-x-x-x-x-x-x-
-if skin_0 and skin_1 in skins[0] and background in skins[1]:
-    print("\nAll skins found!")
-else:
-    raise FileNotFoundError("Nome do arquivo não existe, tente novamente")
 
 back = Actor(background, (WIDTH // 2, HEIGHT // 2))
 
@@ -59,7 +44,7 @@ print("-x-x-x-x-x-x-x-x-")
 
 print("\ngeral info:")
 print(f"\nvel -> {vel}\nImages -> {skin_1}, {skin_0}\nBackground -> {background}")
-print(f"\nNote height -> {note1.height}\nNote width -> {note1.width}")
+print(f"\nNote height -> {note1.height}\nNote width -> {note1.width}\n")
 
 print("-x-x-x-x-x-x-x-x-")
 #-x-x-x-x-x-x-x-x-x-x-x-
